@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# React Accordion
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and interactive **Accordion component built using React.js**.
+This project demonstrates how to manage component state using React `useState` and implement both **single selection** and **multiple selection** modes.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+* Expand and collapse accordion items
+* Single selection mode
+* Multiple selection mode
+* Dynamic accordion data
+* React state management using `useState`
+* Clean and responsive user interface
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* React.js
+* JavaScript (ES6+)
+* HTML5
+* CSS3
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## React Concepts Used
 
-### `npm test`
+### `useState`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project uses React's `useState` hook to manage:
 
-### `npm run build`
+* Currently selected accordion item
+* Multiple selected accordion items
+* Single selection / multiple selection mode
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Single Selection
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In single selection mode, only **one accordion item** can be open at a time.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When another item is selected, the previously opened item is closed.
 
-### `npm run eject`
+### Multiple Selection
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+In multiple selection mode, **multiple accordion items** can be opened at the same time.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The selected item IDs are stored in an array and updated when the user clicks an accordion item.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```text
+Accordian/
+│
+├── public/
+│
+├── src/
+│   ├── data.js
+│   ├── Accordion.js
+│   ├── styles.css
+│   └── ...
+│
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
-## Learn More
+## How It Works
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The accordion uses React state to keep track of the selected items.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For single selection:
 
-### Code Splitting
+```javascript
+const [selected, setSelected] = useState(null);
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+For multiple selection:
 
-### Analyzing the Bundle Size
+```javascript
+const [multiple, setMultiple] = useState([]);
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+When the user clicks an accordion item, the application checks whether **single selection** or **multiple selection** is enabled and updates the state accordingly.
 
-### Making a Progressive Web App
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Clone the repository:
 
-### Advanced Configuration
+```bash
+git clone https://github.com/ushaerikireddy-web/Accordian.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Go to the project folder:
 
-### Deployment
+```bash
+cd Accordian
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Install dependencies:
 
-### `npm run build` fails to minify
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Start the application:
+
+```bash
+npm start
+```
+
+The application will run at:
+
+```text
+http://localhost:3000
+```
+
+## Learning Outcomes
+
+Through this project, I practiced:
+
+* React functional components
+* `useState` hook
+* Event handling
+* Conditional rendering
+* Arrays and array methods
+* Managing single and multiple selections
+* Creating reusable UI components
+
+## Project Purpose
+
+This project was created to practice **React state management and interactive UI components**, especially the difference between handling a single selected item and multiple selected items.
+
+## Author
+
+**Usha Erikireddy**
+
+GitHub:
+https://github.com/ushaerikireddy-web
+
+LinkedIn:
+https://www.linkedin.com/in/usha-erikireddy/
